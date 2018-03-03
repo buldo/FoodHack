@@ -1,13 +1,14 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using MyFood.Api.Data.StepFeatures;
-
+﻿using System.Collections.Generic;
 namespace MyFood.Api.Data
 {
     public class StepDto
     {
-        public string Title { get; set; }
-        public string TitleImage { get; set; }
-        public IEnumerable<StepFeatureDto> Features { get; set; }
+        public string Description { get; set; }
+        public string VoiceDescription { get; set; }
+        public string PictureUrl { get; set; }
+        public int? TimeInSec { get; set; }
+        public string PushText { get; set; }
+
+        public List<string> Tips { get; set; }
     }
 }

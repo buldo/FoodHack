@@ -8,5 +8,7 @@ namespace MyFood.Api.Data
         public Guid Id { get; set; }
         public string Title { get; set; }
         public string PreviewUrl { get; set; }
+        public string Complexity { get; set; }
+        public string Duration { get; set; }
     }
 }

@@ -21,7 +21,14 @@ namespace MyFood.Persistence
 
         public IEnumerable<RecipeDescription> GetDescriptions()
         {
-            return Data.GetAll().Select(d => new RecipeDescription(d.Id, d.Name, d.PreviewUrl));
+            return Data.GetAll().Select(d => new RecipeDescription
+            {
+                Id = d.Id,
+                Title = d.Title,
+                PreviewUrl = d.PreviewUrl,
+                Complexity = d.Complexity,
+                Duration = d.Duration
+            });
         }
     }
 }
