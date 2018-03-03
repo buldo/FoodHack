@@ -11,13 +11,12 @@ namespace MyFood.Persistence
 
         public RepositoryFactory(string connectionString)
         {
-            //_client = new MongoClient(connectionString);
+            _client = new MongoClient(connectionString);
         }
 
         public RecipesRepository Create()
         {
-            return new RecipesRepository(null);
-            //return new RecipesRepository(_client);
+            return new RecipesRepository(_client);
         }
     }
 }

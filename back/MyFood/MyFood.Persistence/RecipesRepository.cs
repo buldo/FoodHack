@@ -16,12 +16,14 @@ namespace MyFood.Persistence
         }
         public Recipe Get(Guid id)
         {
-            return Data.GetAll().First(d => d.Id == id);
+            var collection = GetMongoCollection();
+            return collection.Find(d => d.Id == id).First();
         }
 
         public IEnumerable<RecipeDescription> GetDescriptions()
         {
-            return Data.GetAll().Select(d => new RecipeDescription
+            var collection = GetMongoCollection();
+            return collection.AsQueryable().Select(d => new RecipeDescription
             {
                 Id = d.Id,
                 Title = d.Title,
@@ -29,6 +31,19 @@ namespace MyFood.Persistence
                 Complexity = d.Complexity,
                 Duration = d.Duration
             });
+        }
+
+        public void Insert(Recipe recipe)
+        {
+            var collection = GetMongoCollection();
+            collection.InsertOne(recipe);
+        }
+
+        private IMongoCollection<Recipe> GetMongoCollection()
+        {
+            var database = _client.GetDatabase("MyFood");
+            var collection = database.GetCollection<Recipe>("Recipies");
+            return collection;
         }
     }
 }
