@@ -20,14 +20,11 @@ namespace MyFood.Api
         {
             var builder = new ConfigurationBuilder()
                 .SetBasePath(env.ContentRootPath);
+
+            builder.AddEnvironmentVariables();
             if (env.IsDevelopment())
             {
                 builder.AddUserSecrets<Startup>();
-            }
-
-            if (env.IsProduction())
-            {
-                builder.AddEnvironmentVariables();
             }
 
             Configuration = builder.Build();
