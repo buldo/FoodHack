@@ -1,6 +1,6 @@
 ﻿namespace MyFood.Api.Data.StepFeatures
 {
-    public class TimerFeatureDto : StepFeature
+    public class TimerFeatureDto : StepFeatureDto
     {
         public override FeatureType Type => FeatureType.Timer;
 

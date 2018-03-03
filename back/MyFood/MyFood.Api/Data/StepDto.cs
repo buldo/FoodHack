@@ -8,6 +8,6 @@ namespace MyFood.Api.Data
     {
         public string Title { get; set; }
         public string TitleImage { get; set; }
-        public IEnumerable<StepFeature> Features { get; set; }
+        public IEnumerable<StepFeatureDto> Features { get; set; }
     }
 }

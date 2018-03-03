@@ -1,6 +1,6 @@
 ﻿namespace MyFood.Api.Data.StepFeatures
 {
-    public abstract class StepFeature
+    public abstract class StepFeatureDto
     {
         public abstract FeatureType Type { get; }
     }
