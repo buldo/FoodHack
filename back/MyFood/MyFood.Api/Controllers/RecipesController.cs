@@ -28,7 +28,7 @@ namespace MyFood.Api.Controllers
         [HttpGet]
         public IEnumerable<RecipeDescriptionDto> Get()
         {
-            return _mapper.Map<IEnumerable<RecipeDescriptionDto>>(_repo.GetDescriptions().ToList());
+            return _mapper.Map<IEnumerable<RecipeDescriptionDto>>(_repo.GetDescriptions());
         }
 
         // GET: api/Recipes/5

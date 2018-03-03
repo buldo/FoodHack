@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using MongoDB.Driver;
@@ -23,9 +22,11 @@ namespace MyFood.Persistence
         public IEnumerable<RecipeDescription> GetDescriptions()
         {
             var collection = GetMongoCollection();
-            return collection.AsQueryable().Select(d => new RecipeDescription
+
+            var recipes = collection.AsQueryable().ToList();
+            return recipes.Select(d => new RecipeDescription
             {
-                Id = d.Id,
+                Id = Guid.Parse(d.Id.ToString()),
                 Title = d.Title,
                 PreviewUrl = d.PreviewUrl,
                 Complexity = d.Complexity,
@@ -49,6 +50,7 @@ namespace MyFood.Persistence
         {
             var database = _client.GetDatabase("MyFood");
             var collection = database.GetCollection<Recipe>("Recipies");
+
             return collection;
         }
     }

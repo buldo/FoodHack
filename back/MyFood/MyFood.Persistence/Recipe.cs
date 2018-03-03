@@ -13,7 +13,7 @@ namespace MyFood.Persistence
         public string Description { get; set; }
         public string Complexity { get; set; }
         public string Duration { get; set; }
-        
+
         public List<string> Ingredients { get; set; }
         public List<Step> Steps { get; set; }
         public List<string> Devices { get; set; }
