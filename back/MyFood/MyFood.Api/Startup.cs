@@ -37,7 +37,7 @@ namespace MyFood.Api
         {
             services.AddMvc();
             services.AddAutoMapper();
-            var repoFactory = new RepositoryFactory(Configuration["MongoDB"]);
+            var repoFactory = new RepositoryFactory(Configuration.GetConnectionString("MongoDB"));
             services.AddTransient(provider => repoFactory.Create());
             services.AddSwaggerGen(options =>
             {
