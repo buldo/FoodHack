@@ -39,10 +39,11 @@ namespace MyFood.Api.Controllers
         }
 
         // POST: api/Recipes
-        //[HttpPost]
-        //public void Post([FromBody]string value)
-        //{
-        //}
+        [HttpPost]
+        public void Post([FromBody]RecipeDto value)
+        {
+            _repo.Insert(_mapper.Map<Recipe>(value));
+        }
 
         // PUT: api/Recipes/5
         //[HttpPut("{id}")]
