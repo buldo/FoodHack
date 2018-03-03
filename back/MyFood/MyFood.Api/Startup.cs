@@ -10,6 +10,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using MyFood.Persistence;
+using Swashbuckle.AspNetCore.Swagger;
 
 namespace MyFood.Api
 {
@@ -28,6 +29,10 @@ namespace MyFood.Api
             services.AddMvc();
             services.AddAutoMapper();
             services.AddTransient<RecipesRepository>();
+            services.AddSwaggerGen(options =>
+            {
+                options.SwaggerDoc("v1", new Info {Title = "RecipesApi", Version = "v1"});
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -37,6 +42,9 @@ namespace MyFood.Api
             {
                 app.UseDeveloperExceptionPage();
             }
+
+            app.UseSwagger();
+            app.UseSwaggerUI(options => options.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1"));
 
             app.UseMvc();
         }
