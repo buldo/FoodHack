@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using System.Threading.Tasks;
 using Windows.ApplicationModel;
 using Windows.ApplicationModel.Activation;
 using Windows.Foundation;
@@ -14,13 +15,14 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
+using Prism.Unity.Windows;
 
 namespace MyFood.EditorApp
 {
     /// <summary>
     /// Provides application-specific behavior to supplement the default Application class.
     /// </summary>
-    sealed partial class App : Application
+    sealed partial class App
     {
         /// <summary>
         /// Initializes the singleton application object.  This is the first line of authored code
@@ -29,15 +31,10 @@ namespace MyFood.EditorApp
         public App()
         {
             this.InitializeComponent();
-            this.Suspending += OnSuspending;
+            //this.Suspending += OnSuspending;
         }
 
-        /// <summary>
-        /// Invoked when the application is launched normally by the end user.  Other entry points
-        /// will be used such as when the application is launched to open a specific file.
-        /// </summary>
-        /// <param name="e">Details about the launch request and process.</param>
-        protected override void OnLaunched(LaunchActivatedEventArgs e)
+        protected override Task OnLaunchApplicationAsync(LaunchActivatedEventArgs args)
         {
             Frame rootFrame = Window.Current.Content as Frame;
 
@@ -50,7 +47,7 @@ namespace MyFood.EditorApp
 
                 rootFrame.NavigationFailed += OnNavigationFailed;
 
-                if (e.PreviousExecutionState == ApplicationExecutionState.Terminated)
+                if (args.PreviousExecutionState == ApplicationExecutionState.Terminated)
                 {
                     //TODO: Load state from previously suspended application
                 }
@@ -59,18 +56,20 @@ namespace MyFood.EditorApp
                 Window.Current.Content = rootFrame;
             }
 
-            if (e.PrelaunchActivated == false)
+            if (args.PrelaunchActivated == false)
             {
                 if (rootFrame.Content == null)
                 {
                     // When the navigation stack isn't restored navigate to the first page,
                     // configuring the new page by passing required information as a navigation
                     // parameter
-                    rootFrame.Navigate(typeof(MainPage), e.Arguments);
+                    rootFrame.Navigate(typeof(Views.MainView), args.Arguments);
                 }
                 // Ensure the current window is active
                 Window.Current.Activate();
             }
+
+            return Task.CompletedTask;
         }
 
         /// <summary>
@@ -83,18 +82,18 @@ namespace MyFood.EditorApp
             throw new Exception("Failed to load Page " + e.SourcePageType.FullName);
         }
 
-        /// <summary>
-        /// Invoked when application execution is being suspended.  Application state is saved
-        /// without knowing whether the application will be terminated or resumed with the contents
-        /// of memory still intact.
-        /// </summary>
-        /// <param name="sender">The source of the suspend request.</param>
-        /// <param name="e">Details about the suspend request.</param>
-        private void OnSuspending(object sender, SuspendingEventArgs e)
-        {
-            var deferral = e.SuspendingOperation.GetDeferral();
-            //TODO: Save application state and stop any background activity
-            deferral.Complete();
-        }
+        ///// <summary>
+        ///// Invoked when application execution is being suspended.  Application state is saved
+        ///// without knowing whether the application will be terminated or resumed with the contents
+        ///// of memory still intact.
+        ///// </summary>
+        ///// <param name="sender">The source of the suspend request.</param>
+        ///// <param name="e">Details about the suspend request.</param>
+        //private void OnSuspending(object sender, SuspendingEventArgs e)
+        //{
+        //    var deferral = e.SuspendingOperation.GetDeferral();
+        //    //TODO: Save application state and stop any background activity
+        //    deferral.Complete();
+        //}
     }
 }
