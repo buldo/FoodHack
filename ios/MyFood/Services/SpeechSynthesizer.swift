@@ -1,11 +1,3 @@
-//
-//  SpeechSynthesizer.swift
-//  MyFood
-//
-//  Created by Georgy Kasapidi on 03.03.18.
-//  Copyright © 2018 NoName. All rights reserved.
-//
-
 import Foundation
 import AVFoundation
 
@@ -77,17 +69,3 @@ final class SpeechSynthesizer {
         }
     }
 }
-
-//        try? AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback, with: [])
-
-//var utteranceCallback: (() -> Void)? = nil {
-//    didSet {
-//        let _utteranceCallback = utteranceCallback
-//
-//        synthesizerDelegate.didFinishUtterance = { _ in
-//            _utteranceCallback?()
-//        }
-//    }
-//}
-
-

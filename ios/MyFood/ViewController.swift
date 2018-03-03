@@ -57,7 +57,6 @@ class ViewController: UIViewController {
                 print(result.text)
 
                 self?.lastText = result.text
-//                speechService?.utter(text: "Привет! Это твой первый рецепт?")
             }
 
             self?.speechRecognizer = speechRecognizer
