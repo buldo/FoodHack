@@ -16,9 +16,18 @@ namespace MyFood.Api
 {
     public class Startup
     {
-        public Startup(IConfiguration configuration)
+        public Startup(IHostingEnvironment env)
         {
-            Configuration = configuration;
+            var builder = new ConfigurationBuilder()
+                .SetBasePath(env.ContentRootPath);
+
+            builder.AddEnvironmentVariables();
+            if (env.IsDevelopment())
+            {
+                builder.AddUserSecrets<Startup>();
+            }
+
+            Configuration = builder.Build();
         }
 
         public IConfiguration Configuration { get; }
@@ -28,7 +37,7 @@ namespace MyFood.Api
         {
             services.AddMvc();
             services.AddAutoMapper();
-            var repoFactory = new RepositoryFactory("");
+            var repoFactory = new RepositoryFactory(Configuration["MongoDB"]);
             services.AddTransient(provider => repoFactory.Create());
             services.AddSwaggerGen(options =>
             {
