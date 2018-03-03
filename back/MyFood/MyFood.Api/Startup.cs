@@ -28,7 +28,8 @@ namespace MyFood.Api
         {
             services.AddMvc();
             services.AddAutoMapper();
-            services.AddTransient<RecipesRepository>();
+            var repoFactory = new RepositoryFactory("");
+            services.AddTransient(provider => repoFactory.Create());
             services.AddSwaggerGen(options =>
             {
                 options.SwaggerDoc("v1", new Info {Title = "RecipesApi", Version = "v1"});
