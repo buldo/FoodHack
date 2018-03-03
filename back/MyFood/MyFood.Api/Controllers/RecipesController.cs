@@ -42,7 +42,9 @@ namespace MyFood.Api.Controllers
         [HttpPost]
         public void Post([FromBody]RecipeDto value)
         {
-            _repo.Insert(_mapper.Map<Recipe>(value));
+            var recipe = _mapper.Map<Recipe>(value);
+            recipe.Id = Guid.NewGuid();
+            _repo.Insert(recipe);
         }
 
         // PUT: api/Recipes/5
