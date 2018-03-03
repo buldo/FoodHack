@@ -39,6 +39,12 @@ namespace MyFood.Persistence
             collection.InsertOne(recipe);
         }
 
+        public void Delete(Guid id)
+        {
+            var collection = GetMongoCollection();
+            collection.DeleteOne(r => r.Id == id);
+        }
+
         private IMongoCollection<Recipe> GetMongoCollection()
         {
             var database = _client.GetDatabase("MyFood");

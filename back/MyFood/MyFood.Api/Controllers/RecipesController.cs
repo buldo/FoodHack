@@ -54,9 +54,10 @@ namespace MyFood.Api.Controllers
         //}
 
         // DELETE: api/ApiWithActions/5
-        //[HttpDelete("{id}")]
-        //public void Delete(int id)
-        //{
-        //}
+        [HttpDelete("{id}")]
+        public void Delete(Guid id)
+        {
+            _repo.Delete(id);
+        }
     }
 }
