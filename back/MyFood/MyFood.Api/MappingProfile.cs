@@ -12,6 +12,10 @@ namespace MyFood.Api
             CreateMap<Recipe, RecipeDto>();
             CreateMap<Step, StepDto>();
             CreateMap<RecipeDescription, RecipeDescriptionDto>();
+            
+            CreateMap<RecipeDto, Recipe>();
+            CreateMap<StepDto, Step>();
+            CreateMap<RecipeDescriptionDto, RecipeDescription>();
         }
     }
 }
