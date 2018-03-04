@@ -2,7 +2,7 @@
 // Changes may cause incorrect behavior and will be lost if the code is
 // regenerated.
 
-namespace MyFood.EditorApp.ApiClient
+namespace MyFood.EditorApp.Api
 {
     using System;
     using System.Collections;
@@ -13,16 +13,16 @@ namespace MyFood.EditorApp.ApiClient
     using Models;
 
     /// <summary>
-    /// Extension methods for ApiClientClient.
+    /// Extension methods for ApiClient.
     /// </summary>
-    public static partial class ApiClientClientExtensions
+    public static partial class ApiClientExtensions
     {
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>
-            public static IList<RecipeDescriptionDto> ApiRecipesGet(this IApiClientClient operations)
+            public static IList<RecipeDescriptionDto> ApiRecipesGet(this IApiClient operations)
             {
-                return Task.Factory.StartNew(s => ((IApiClientClient)s).ApiRecipesGetAsync(), operations, CancellationToken.None, TaskCreationOptions.None, TaskScheduler.Default).Unwrap().GetAwaiter().GetResult();
+                return Task.Factory.StartNew(s => ((IApiClient)s).ApiRecipesGetAsync(), operations, CancellationToken.None, TaskCreationOptions.None, TaskScheduler.Default).Unwrap().GetAwaiter().GetResult();
             }
 
             /// <param name='operations'>
@@ -31,7 +31,7 @@ namespace MyFood.EditorApp.ApiClient
             /// <param name='cancellationToken'>
             /// The cancellation token.
             /// </param>
-            public static async Task<IList<RecipeDescriptionDto>> ApiRecipesGetAsync(this IApiClientClient operations, CancellationToken cancellationToken = default(CancellationToken))
+            public static async Task<IList<RecipeDescriptionDto>> ApiRecipesGetAsync(this IApiClient operations, CancellationToken cancellationToken = default(CancellationToken))
             {
                 using (var _result = await operations.ApiRecipesGetWithHttpMessagesAsync(null, cancellationToken).ConfigureAwait(false))
                 {
@@ -44,9 +44,9 @@ namespace MyFood.EditorApp.ApiClient
             /// </param>
             /// <param name='value'>
             /// </param>
-            public static void ApiRecipesPost(this IApiClientClient operations, RecipeDto value = default(RecipeDto))
+            public static void ApiRecipesPost(this IApiClient operations, RecipeDto value = default(RecipeDto))
             {
-                Task.Factory.StartNew(s => ((IApiClientClient)s).ApiRecipesPostAsync(value), operations, CancellationToken.None, TaskCreationOptions.None, TaskScheduler.Default).Unwrap().GetAwaiter().GetResult();
+                Task.Factory.StartNew(s => ((IApiClient)s).ApiRecipesPostAsync(value), operations, CancellationToken.None, TaskCreationOptions.None, TaskScheduler.Default).Unwrap().GetAwaiter().GetResult();
             }
 
             /// <param name='operations'>
@@ -57,7 +57,7 @@ namespace MyFood.EditorApp.ApiClient
             /// <param name='cancellationToken'>
             /// The cancellation token.
             /// </param>
-            public static async Task ApiRecipesPostAsync(this IApiClientClient operations, RecipeDto value = default(RecipeDto), CancellationToken cancellationToken = default(CancellationToken))
+            public static async Task ApiRecipesPostAsync(this IApiClient operations, RecipeDto value = default(RecipeDto), CancellationToken cancellationToken = default(CancellationToken))
             {
                 await operations.ApiRecipesPostWithHttpMessagesAsync(value, null, cancellationToken).ConfigureAwait(false);
             }
@@ -67,9 +67,9 @@ namespace MyFood.EditorApp.ApiClient
             /// </param>
             /// <param name='id'>
             /// </param>
-            public static RecipeDto ApiRecipesByIdGet(this IApiClientClient operations, Guid id)
+            public static RecipeDto ApiRecipesByIdGet(this IApiClient operations, Guid id)
             {
-                return Task.Factory.StartNew(s => ((IApiClientClient)s).ApiRecipesByIdGetAsync(id), operations, CancellationToken.None, TaskCreationOptions.None, TaskScheduler.Default).Unwrap().GetAwaiter().GetResult();
+                return Task.Factory.StartNew(s => ((IApiClient)s).ApiRecipesByIdGetAsync(id), operations, CancellationToken.None, TaskCreationOptions.None, TaskScheduler.Default).Unwrap().GetAwaiter().GetResult();
             }
 
             /// <param name='operations'>
@@ -80,7 +80,7 @@ namespace MyFood.EditorApp.ApiClient
             /// <param name='cancellationToken'>
             /// The cancellation token.
             /// </param>
-            public static async Task<RecipeDto> ApiRecipesByIdGetAsync(this IApiClientClient operations, Guid id, CancellationToken cancellationToken = default(CancellationToken))
+            public static async Task<RecipeDto> ApiRecipesByIdGetAsync(this IApiClient operations, Guid id, CancellationToken cancellationToken = default(CancellationToken))
             {
                 using (var _result = await operations.ApiRecipesByIdGetWithHttpMessagesAsync(id, null, cancellationToken).ConfigureAwait(false))
                 {
@@ -93,9 +93,9 @@ namespace MyFood.EditorApp.ApiClient
             /// </param>
             /// <param name='id'>
             /// </param>
-            public static void ApiRecipesByIdDelete(this IApiClientClient operations, Guid id)
+            public static void ApiRecipesByIdDelete(this IApiClient operations, Guid id)
             {
-                Task.Factory.StartNew(s => ((IApiClientClient)s).ApiRecipesByIdDeleteAsync(id), operations, CancellationToken.None, TaskCreationOptions.None, TaskScheduler.Default).Unwrap().GetAwaiter().GetResult();
+                Task.Factory.StartNew(s => ((IApiClient)s).ApiRecipesByIdDeleteAsync(id), operations, CancellationToken.None, TaskCreationOptions.None, TaskScheduler.Default).Unwrap().GetAwaiter().GetResult();
             }
 
             /// <param name='operations'>
@@ -106,7 +106,7 @@ namespace MyFood.EditorApp.ApiClient
             /// <param name='cancellationToken'>
             /// The cancellation token.
             /// </param>
-            public static async Task ApiRecipesByIdDeleteAsync(this IApiClientClient operations, Guid id, CancellationToken cancellationToken = default(CancellationToken))
+            public static async Task ApiRecipesByIdDeleteAsync(this IApiClient operations, Guid id, CancellationToken cancellationToken = default(CancellationToken))
             {
                 await operations.ApiRecipesByIdDeleteWithHttpMessagesAsync(id, null, cancellationToken).ConfigureAwait(false);
             }

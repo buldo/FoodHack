@@ -2,7 +2,7 @@
 // Changes may cause incorrect behavior and will be lost if the code is
 // regenerated.
 
-namespace MyFood.EditorApp.ApiClient
+namespace MyFood.EditorApp.Api
 {
     using System;
     using System.Collections.Generic;
@@ -15,7 +15,7 @@ namespace MyFood.EditorApp.ApiClient
 
     /// <summary>
     /// </summary>
-    public partial interface IApiClientClient : IDisposable
+    public partial interface IApiClient : IDisposable
     {
         /// <summary>
         /// The base URI of the service.

@@ -2,7 +2,7 @@
 // Changes may cause incorrect behavior and will be lost if the code is
 // regenerated.
 
-namespace MyFood.EditorApp.ApiClient.Models
+namespace MyFood.EditorApp.Api.Models
 {
     using System;
     using System.Linq;

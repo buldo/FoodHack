@@ -92,12 +92,12 @@
     <RestoreProjectStyle>PackageReference</RestoreProjectStyle>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="ApiClientClient\ApiClientClient.cs" />
-    <Compile Include="ApiClientClient\ApiClientClientExtensions.cs" />
-    <Compile Include="ApiClientClient\IApiClientClient.cs" />
-    <Compile Include="ApiClientClient\Models\RecipeDescriptionDto.cs" />
-    <Compile Include="ApiClientClient\Models\RecipeDto.cs" />
-    <Compile Include="ApiClientClient\Models\StepDto.cs" />
+    <Compile Include="ApiClient\ApiClient.cs" />
+    <Compile Include="ApiClient\ApiClientExtensions.cs" />
+    <Compile Include="ApiClient\IApiClient.cs" />
+    <Compile Include="ApiClient\Models\RecipeDescriptionDto.cs" />
+    <Compile Include="ApiClient\Models\RecipeDto.cs" />
+    <Compile Include="ApiClient\Models\StepDto.cs" />
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>

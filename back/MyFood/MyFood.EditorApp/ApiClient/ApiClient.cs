@@ -2,7 +2,7 @@
 // Changes may cause incorrect behavior and will be lost if the code is
 // regenerated.
 
-namespace MyFood.EditorApp.ApiClient
+namespace MyFood.EditorApp.Api
 {
     using System;
     using System.Linq;
@@ -20,7 +20,7 @@ namespace MyFood.EditorApp.ApiClient
     using Newtonsoft.Json;
     using Models;
 
-    public partial class ApiClientClient : ServiceClient<ApiClientClient>, IApiClientClient
+    public partial class ApiClient : ServiceClient<ApiClient>, IApiClient
     {
         /// <summary>
         /// The base URI of the service.
@@ -43,18 +43,18 @@ namespace MyFood.EditorApp.ApiClient
         public ServiceClientCredentials Credentials { get; private set; }
 
         /// <summary>
-        /// Initializes a new instance of the ApiClientClient class.
+        /// Initializes a new instance of the ApiClient class.
         /// </summary>
         /// <param name='handlers'>
         /// Optional. The delegating handlers to add to the http client pipeline.
         /// </param>
-        protected ApiClientClient(params DelegatingHandler[] handlers) : base(handlers)
+        protected ApiClient(params DelegatingHandler[] handlers) : base(handlers)
         {
             this.Initialize();
         }
 
         /// <summary>
-        /// Initializes a new instance of the ApiClientClient class.
+        /// Initializes a new instance of the ApiClient class.
         /// </summary>
         /// <param name='rootHandler'>
         /// Optional. The http client handler used to handle http transport.
@@ -62,13 +62,13 @@ namespace MyFood.EditorApp.ApiClient
         /// <param name='handlers'>
         /// Optional. The delegating handlers to add to the http client pipeline.
         /// </param>
-        protected ApiClientClient(HttpClientHandler rootHandler, params DelegatingHandler[] handlers) : base(rootHandler, handlers)
+        protected ApiClient(HttpClientHandler rootHandler, params DelegatingHandler[] handlers) : base(rootHandler, handlers)
         {
             this.Initialize();
         }
 
         /// <summary>
-        /// Initializes a new instance of the ApiClientClient class.
+        /// Initializes a new instance of the ApiClient class.
         /// </summary>
         /// <param name='baseUri'>
         /// Optional. The base URI of the service.
@@ -76,7 +76,7 @@ namespace MyFood.EditorApp.ApiClient
         /// <param name='handlers'>
         /// Optional. The delegating handlers to add to the http client pipeline.
         /// </param>
-        protected ApiClientClient(Uri baseUri, params DelegatingHandler[] handlers) : this(handlers)
+        protected ApiClient(Uri baseUri, params DelegatingHandler[] handlers) : this(handlers)
         {
             if (baseUri == null)
             {
@@ -86,7 +86,7 @@ namespace MyFood.EditorApp.ApiClient
         }
 
         /// <summary>
-        /// Initializes a new instance of the ApiClientClient class.
+        /// Initializes a new instance of the ApiClient class.
         /// </summary>
         /// <param name='baseUri'>
         /// Optional. The base URI of the service.
@@ -97,7 +97,7 @@ namespace MyFood.EditorApp.ApiClient
         /// <param name='handlers'>
         /// Optional. The delegating handlers to add to the http client pipeline.
         /// </param>
-        protected ApiClientClient(Uri baseUri, HttpClientHandler rootHandler, params DelegatingHandler[] handlers) : this(rootHandler, handlers)
+        protected ApiClient(Uri baseUri, HttpClientHandler rootHandler, params DelegatingHandler[] handlers) : this(rootHandler, handlers)
         {
             if (baseUri == null)
             {
@@ -107,7 +107,7 @@ namespace MyFood.EditorApp.ApiClient
         }
 
         /// <summary>
-        /// Initializes a new instance of the ApiClientClient class.
+        /// Initializes a new instance of the ApiClient class.
         /// </summary>
         /// <param name='credentials'>
         /// Required. Subscription credentials which uniquely identify client subscription.
@@ -115,7 +115,7 @@ namespace MyFood.EditorApp.ApiClient
         /// <param name='handlers'>
         /// Optional. The delegating handlers to add to the http client pipeline.
         /// </param>
-        public ApiClientClient(ServiceClientCredentials credentials, params DelegatingHandler[] handlers) : this(handlers)
+        public ApiClient(ServiceClientCredentials credentials, params DelegatingHandler[] handlers) : this(handlers)
         {
             if (credentials == null)
             {
@@ -129,7 +129,7 @@ namespace MyFood.EditorApp.ApiClient
         }
 
         /// <summary>
-        /// Initializes a new instance of the ApiClientClient class.
+        /// Initializes a new instance of the ApiClient class.
         /// </summary>
         /// <param name='credentials'>
         /// Required. Subscription credentials which uniquely identify client subscription.
@@ -140,7 +140,7 @@ namespace MyFood.EditorApp.ApiClient
         /// <param name='handlers'>
         /// Optional. The delegating handlers to add to the http client pipeline.
         /// </param>
-        public ApiClientClient(ServiceClientCredentials credentials, HttpClientHandler rootHandler, params DelegatingHandler[] handlers) : this(rootHandler, handlers)
+        public ApiClient(ServiceClientCredentials credentials, HttpClientHandler rootHandler, params DelegatingHandler[] handlers) : this(rootHandler, handlers)
         {
             if (credentials == null)
             {
@@ -154,7 +154,7 @@ namespace MyFood.EditorApp.ApiClient
         }
 
         /// <summary>
-        /// Initializes a new instance of the ApiClientClient class.
+        /// Initializes a new instance of the ApiClient class.
         /// </summary>
         /// <param name='baseUri'>
         /// Optional. The base URI of the service.
@@ -165,7 +165,7 @@ namespace MyFood.EditorApp.ApiClient
         /// <param name='handlers'>
         /// Optional. The delegating handlers to add to the http client pipeline.
         /// </param>
-        public ApiClientClient(Uri baseUri, ServiceClientCredentials credentials, params DelegatingHandler[] handlers) : this(handlers)
+        public ApiClient(Uri baseUri, ServiceClientCredentials credentials, params DelegatingHandler[] handlers) : this(handlers)
         {
             if (baseUri == null)
             {
@@ -184,7 +184,7 @@ namespace MyFood.EditorApp.ApiClient
         }
 
         /// <summary>
-        /// Initializes a new instance of the ApiClientClient class.
+        /// Initializes a new instance of the ApiClient class.
         /// </summary>
         /// <param name='baseUri'>
         /// Optional. The base URI of the service.
@@ -198,7 +198,7 @@ namespace MyFood.EditorApp.ApiClient
         /// <param name='handlers'>
         /// Optional. The delegating handlers to add to the http client pipeline.
         /// </param>
-        public ApiClientClient(Uri baseUri, ServiceClientCredentials credentials, HttpClientHandler rootHandler, params DelegatingHandler[] handlers) : this(rootHandler, handlers)
+        public ApiClient(Uri baseUri, ServiceClientCredentials credentials, HttpClientHandler rootHandler, params DelegatingHandler[] handlers) : this(rootHandler, handlers)
         {
             if (baseUri == null)
             {

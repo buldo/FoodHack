@@ -15,7 +15,10 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
+using Microsoft.Rest;
+using MyFood.EditorApp.Api;
 using Prism.Unity.Windows;
+using Unity;
 
 namespace MyFood.EditorApp
 {
@@ -32,6 +35,13 @@ namespace MyFood.EditorApp
         {
             this.InitializeComponent();
             //this.Suspending += OnSuspending;
+        }
+
+        protected override void ConfigureContainer()
+        {
+            base.ConfigureContainer();
+            Container.RegisterInstance(typeof(IApiClient),
+                new ApiClient(new Uri("https://myfood-dev-as.azurewebsites.net"), new TokenCredentials("test")));
         }
 
         protected override Task OnLaunchApplicationAsync(LaunchActivatedEventArgs args)

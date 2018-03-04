@@ -6,10 +6,19 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:mvvm="using:Prism.Windows.Mvvm"
+    xmlns:viewModels="using:MyFood.EditorApp.ViewModels"
     mc:Ignorable="d"
+    d:DataContext="{d:DesignInstance viewModels:MainViewModel}"
+    NavigationCacheMode="Disabled"
     mvvm:ViewModelLocator.AutoWireViewModel="True">
 
-    <Grid>
-<TextBlock>TEXT</TextBlock>
-    </Grid>
+
+    <GridView ItemsSource="{Binding Previews}">
+        <DataTemplate x:DataType="viewModels:PreviewViewModel">
+            <Grid>
+                <Image Source="{Binding PreviewUrl}" Height="180" Width="180" Stretch="UniformToFill"/>
+                <TextBlock HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Text="{Binding Title}" FontWeight="Bold"/>
+            </Grid>
+        </DataTemplate>
+    </GridView>
 </Page>
