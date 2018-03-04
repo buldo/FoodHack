@@ -1,0 +1,6 @@
+framework module Pods_MyFood {
+  umbrella header "Pods-MyFood-umbrella.h"
+
+  export *
+  module * { export * }
+}
