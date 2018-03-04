@@ -9,11 +9,14 @@ namespace MyFood.EditorApp.ViewModels
 {
     internal class PreviewViewModel : BindableBase
     {
-        public PreviewViewModel(string title, string previewUrl)
+        public PreviewViewModel(Guid? id, string title, string previewUrl)
         {
+            Id = id;
             Title = title;
             PreviewUrl = previewUrl;
         }
+
+        public Guid? Id { get; }
 
         public string Title { get; }
 

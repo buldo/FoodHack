@@ -17,7 +17,11 @@ using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 using Microsoft.Rest;
 using MyFood.EditorApp.Api;
+using MyFood.EditorApp.ViewModels;
+using MyFood.EditorApp.Views;
+using Prism.Mvvm;
 using Prism.Unity.Windows;
+using Prism.Windows.Mvvm;
 using Unity;
 
 namespace MyFood.EditorApp
@@ -105,5 +109,10 @@ namespace MyFood.EditorApp
         //    //TODO: Save application state and stop any background activity
         //    deferral.Complete();
         //}
+        protected override void ConfigureViewModelLocator()
+        {
+            base.ConfigureViewModelLocator();
+            ViewModelLocationProvider.Register<EditPage>(() => new EditorViewModel());
+        }
     }
 }

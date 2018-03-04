@@ -13,12 +13,24 @@
     mvvm:ViewModelLocator.AutoWireViewModel="True">
 
 
-    <GridView ItemsSource="{Binding Previews}">
-        <DataTemplate x:DataType="viewModels:PreviewViewModel">
-            <Grid>
-                <Image Source="{Binding PreviewUrl}" Height="180" Width="180" Stretch="UniformToFill"/>
-                <TextBlock HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Text="{Binding Title}" FontWeight="Bold"/>
-            </Grid>
-        </DataTemplate>
+    <GridView ItemsSource="{Binding Previews}" Margin="2,0,0,0"
+              ItemClick="ListViewBase_OnItemClick" IsItemClickEnabled="True" SelectionMode="None">
+        <GridView.ItemTemplate>
+            <DataTemplate x:DataType="viewModels:PreviewViewModel">
+                <Grid Background="Black" Width="180" Height="180">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Image Grid.Row="0" Source="{Binding PreviewUrl}" Stretch="UniformToFill"/>
+                    <TextBlock Grid.Row="1"
+                        HorizontalAlignment="Stretch"
+                        VerticalAlignment="Bottom"
+                        Text="{Binding Title}"
+                        FontWeight="Bold"
+                        Foreground="White"/>
+                </Grid>
+            </DataTemplate>
+        </GridView.ItemTemplate>
     </GridView>
 </Page>
