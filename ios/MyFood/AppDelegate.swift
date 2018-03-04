@@ -19,27 +19,29 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         SFSpeechRecognizer.requestAuthorization { _ in }
 
         let window = UIWindow()
-        window.rootViewController = UIViewController()
+        window.rootViewController = SplashViewController()
 
         self.window = window
 
         window.makeKeyAndVisible()
 
-        let recipeURL = URL(string: "https://myfood-dev-as.azurewebsites.net/api/Recipes/f4a100f2-5e37-481e-be0b-4aa15fa6a29e")!
+        let recipesURL = URL(string: "https://myfood-dev-as.azurewebsites.net/api/Recipes")!
 
-        URLSession.shared.dataTask(with: recipeURL) { (data, _, _) in
+        URLSession.shared.dataTask(with: recipesURL) { (data, _, _) in
             guard let data = data else {
                 return
             }
 
-            guard let recipe = try? JSONDecoder().decode(RecipeInfo.self, from: data) else {
+            guard let recipes = try? JSONDecoder().decode([RecipeListInfo].self, from: data) else {
                 return
             }
 
             DispatchQueue.main.async {
-                let vc = RecipeViewController(recipe: recipe)
+                let vc = RecipeListViewController(recipes: recipes)
+                let nc = UINavigationController(rootViewController: vc)
+                nc.navigationBar.tintColor = #colorLiteral(red: 0.3393005133, green: 0.2195523679, blue: 0.3600926697, alpha: 1)
 
-                window.rootViewController = vc
+                window.rootViewController = nc
             }
         }.resume()
 

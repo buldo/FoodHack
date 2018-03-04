@@ -47,7 +47,7 @@ class RecipeViewController: UIViewController {
     }
 
     @IBAction func didTapOnGoBtn(_ sender: Any) {
-        let vc = RecipeStepViewController(steps: recipe.steps)
+        let vc = RecipeStepViewController(recipe: recipe)
 
         present(vc, animated: true, completion: nil)
     }
