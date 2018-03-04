@@ -48,21 +48,31 @@ class RatingViewController: UIViewController {
 
     @IBAction func star1BtnTapped(_ sender: Any) {
         starLabel.text = "⭐︎☆☆☆☆"
+
+        dismiss(animated: true, completion: nil)
     }
 
     @IBAction func star2BtnTapped(_ sender: Any) {
         starLabel.text = "⭐︎⭐︎☆☆☆"
+
+        dismiss(animated: true, completion: nil)
     }
 
     @IBAction func star3BtnTapped(_ sender: Any) {
         starLabel.text = "⭐︎⭐︎⭐︎☆☆"
+
+        dismiss(animated: true, completion: nil)
     }
 
     @IBAction func star4BtnTapped(_ sender: Any) {
         starLabel.text = "⭐︎⭐︎⭐︎⭐︎☆"
+
+        dismiss(animated: true, completion: nil)
     }
 
     @IBAction func star5BtnTapped(_ sender: Any) {
         starLabel.text = "⭐︎⭐︎⭐︎⭐︎⭐︎"
+
+        dismiss(animated: true, completion: nil)
     }
 }

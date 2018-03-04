@@ -19,3 +19,11 @@ struct RecipeInfo: Codable {
     let devices: [String]
     let steps: [RecipeStepInfo]
 }
+
+struct RecipeListInfo: Codable {
+    let id: String
+    let title: String
+    let complexity: String
+    let duration: String
+    let previewUrl: URL?
+}

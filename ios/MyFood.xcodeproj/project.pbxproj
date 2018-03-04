@@ -22,6 +22,10 @@
 		147B3807204BE86D00B45B42 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147B3805204BE86D00B45B42 /* SplashViewController.swift */; };
 		147B3808204BE86D00B45B42 /* SplashViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 147B3806204BE86D00B45B42 /* SplashViewController.xib */; };
 		147B380A204BE9EB00B45B42 /* dancing_turkey.gif in Resources */ = {isa = PBXBuildFile; fileRef = 147B3809204BE9EB00B45B42 /* dancing_turkey.gif */; };
+		147B380E204BECC800B45B42 /* RecipeListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147B380C204BECC800B45B42 /* RecipeListViewController.swift */; };
+		147B380F204BECC800B45B42 /* RecipeListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 147B380D204BECC800B45B42 /* RecipeListViewController.xib */; };
+		147B3812204BEDAC00B45B42 /* RecipeListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147B3810204BEDAC00B45B42 /* RecipeListTableViewCell.swift */; };
+		147B3813204BEDAC00B45B42 /* RecipeListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 147B3811204BEDAC00B45B42 /* RecipeListTableViewCell.xib */; };
 		C55C5B8F423601000334E719 /* Pods_MyFood.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E809BFB82BD8D41C357D7499 /* Pods_MyFood.framework */; };
 /* End PBXBuildFile section */
 
@@ -43,6 +47,10 @@
 		147B3805204BE86D00B45B42 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
 		147B3806204BE86D00B45B42 /* SplashViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SplashViewController.xib; sourceTree = "<group>"; };
 		147B3809204BE9EB00B45B42 /* dancing_turkey.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = dancing_turkey.gif; sourceTree = "<group>"; };
+		147B380C204BECC800B45B42 /* RecipeListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeListViewController.swift; sourceTree = "<group>"; };
+		147B380D204BECC800B45B42 /* RecipeListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecipeListViewController.xib; sourceTree = "<group>"; };
+		147B3810204BEDAC00B45B42 /* RecipeListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeListTableViewCell.swift; sourceTree = "<group>"; };
+		147B3811204BEDAC00B45B42 /* RecipeListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecipeListTableViewCell.xib; sourceTree = "<group>"; };
 		1862C64DE47BAB9697D03456 /* Pods-MyFood.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyFood.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MyFood/Pods-MyFood.debug.xcconfig"; sourceTree = "<group>"; };
 		B486F8690859D8504CCA1394 /* Pods-MyFood.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyFood.release.xcconfig"; path = "Pods/Target Support Files/Pods-MyFood/Pods-MyFood.release.xcconfig"; sourceTree = "<group>"; };
 		E809BFB82BD8D41C357D7499 /* Pods_MyFood.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyFood.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -105,6 +113,7 @@
 		147B37E8204B0A4600B45B42 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				147B380B204BEC9700B45B42 /* RecipeList */,
 				147B3804204BE83500B45B42 /* Splash */,
 				147B37FF204BE2B900B45B42 /* Rating */,
 				147B37F3204B16CE00B45B42 /* RecipeStep */,
@@ -163,6 +172,17 @@
 				147B3806204BE86D00B45B42 /* SplashViewController.xib */,
 			);
 			path = Splash;
+			sourceTree = "<group>";
+		};
+		147B380B204BEC9700B45B42 /* RecipeList */ = {
+			isa = PBXGroup;
+			children = (
+				147B380C204BECC800B45B42 /* RecipeListViewController.swift */,
+				147B380D204BECC800B45B42 /* RecipeListViewController.xib */,
+				147B3810204BEDAC00B45B42 /* RecipeListTableViewCell.swift */,
+				147B3811204BEDAC00B45B42 /* RecipeListTableViewCell.xib */,
+			);
+			path = RecipeList;
 			sourceTree = "<group>";
 		};
 		441D218EB98278F91C94BE23 /* Frameworks */ = {
@@ -244,7 +264,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				147B380F204BECC800B45B42 /* RecipeListViewController.xib in Resources */,
 				147B37F7204B1C3A00B45B42 /* RecipeStepViewController.xib in Resources */,
+				147B3813204BEDAC00B45B42 /* RecipeListTableViewCell.xib in Resources */,
 				147B3808204BE86D00B45B42 /* SplashViewController.xib in Resources */,
 				147B37CF204AB4EE00B45B42 /* Assets.xcassets in Resources */,
 				147B380A204BE9EB00B45B42 /* dancing_turkey.gif in Resources */,
@@ -324,7 +346,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				147B37FC204B2DEF00B45B42 /* Notifications.swift in Sources */,
+				147B3812204BEDAC00B45B42 /* RecipeListTableViewCell.swift in Sources */,
 				147B37C8204AB4EE00B45B42 /* AppDelegate.swift in Sources */,
+				147B380E204BECC800B45B42 /* RecipeListViewController.swift in Sources */,
 				147B37ED204B0C8800B45B42 /* RecipeViewController.swift in Sources */,
 				147B37FE204BA42400B45B42 /* SpeechService.swift in Sources */,
 				147B37F6204B1C3A00B45B42 /* RecipeStepViewController.swift in Sources */,
