@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RatingViewController" customModule="MyFood" customModuleProvider="target">
+            <connections>
+                <outlet property="dodoLabel" destination="5Xl-an-zWx" id="xho-Rp-UIA"/>
+                <outlet property="imageView" destination="AmJ-9e-H9U" id="uJU-Em-aP4"/>
+                <outlet property="starLabel" destination="OG3-In-AKW" id="ZM7-LK-dgg"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="AmJ-9e-H9U">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="211"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="AmJ-9e-H9U" secondAttribute="height" multiplier="16:9" id="Wfm-4i-1Qz"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Вы прекрасны!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BV3-iT-Uaq">
+                    <rect key="frame" x="105.5" y="235" width="164" height="29"/>
+                    <fontDescription key="fontDescription" type="italicSystem" pointSize="24"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Пора накрывать на стол и пробовать ваш шедевр!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UXs-KO-a1A">
+                    <rect key="frame" x="24" y="280" width="327" height="41"/>
+                    <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Пожалуйста, оцените рецепт" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Erf-7z-MHt">
+                    <rect key="frame" x="101.5" y="345" width="173.5" height="14.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="⭐︎⭐︎⭐︎⭐︎☆" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OG3-In-AKW">
+                    <rect key="frame" x="87.5" y="367.5" width="200.5" height="43"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="36"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="KIL-2X-7LQ">
+                    <rect key="frame" x="87" y="367.5" width="200" height="43"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D83-vi-qmo">
+                            <rect key="frame" x="0.0" y="0.0" width="40" height="43"/>
+                            <connections>
+                                <action selector="star1BtnTapped:" destination="-1" eventType="touchUpInside" id="8mK-X3-kzV"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zdE-Js-jfE">
+                            <rect key="frame" x="40" y="0.0" width="40" height="43"/>
+                            <connections>
+                                <action selector="star2BtnTapped:" destination="-1" eventType="touchUpInside" id="yiD-p2-IIJ"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fkR-hz-Aty">
+                            <rect key="frame" x="80" y="0.0" width="40" height="43"/>
+                            <connections>
+                                <action selector="star3BtnTapped:" destination="-1" eventType="touchUpInside" id="Bta-24-a8e"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dfg-km-w1b">
+                            <rect key="frame" x="120" y="0.0" width="40" height="43"/>
+                            <connections>
+                                <action selector="star4BtnTapped:" destination="-1" eventType="touchUpInside" id="IeC-FH-lHT"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zH9-yg-V5w">
+                            <rect key="frame" x="160" y="0.0" width="40" height="43"/>
+                            <connections>
+                                <action selector="star5BtnTapped:" destination="-1" eventType="touchUpInside" id="nhG-Ja-4C1"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                </stackView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Не получилось? Еще не поздно заказать пиццу https://dodopizza.ru/" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Xl-an-zWx">
+                    <rect key="frame" x="24" y="616.5" width="327" height="26.5"/>
+                    <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="11"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="KIL-2X-7LQ" firstAttribute="centerY" secondItem="OG3-In-AKW" secondAttribute="centerY" id="2P6-iu-w0S"/>
+                <constraint firstItem="KIL-2X-7LQ" firstAttribute="height" secondItem="OG3-In-AKW" secondAttribute="height" id="4Wv-Ep-OcE"/>
+                <constraint firstAttribute="bottom" secondItem="5Xl-an-zWx" secondAttribute="bottom" constant="24" id="9Lc-AG-g5p"/>
+                <constraint firstItem="BV3-iT-Uaq" firstAttribute="top" secondItem="AmJ-9e-H9U" secondAttribute="bottom" constant="24" id="BS0-fz-c9Z"/>
+                <constraint firstItem="UXs-KO-a1A" firstAttribute="top" secondItem="BV3-iT-Uaq" secondAttribute="bottom" constant="16" id="Cmk-vh-KqN"/>
+                <constraint firstItem="AmJ-9e-H9U" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Gf2-eo-Z9b"/>
+                <constraint firstItem="KIL-2X-7LQ" firstAttribute="centerX" secondItem="OG3-In-AKW" secondAttribute="centerX" id="MU4-ir-zsy"/>
+                <constraint firstItem="BV3-iT-Uaq" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="OSP-lU-tUq"/>
+                <constraint firstItem="OG3-In-AKW" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="UPF-dz-MFX"/>
+                <constraint firstItem="Erf-7z-MHt" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Ybu-vK-zYD"/>
+                <constraint firstItem="5Xl-an-zWx" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="24" id="cdO-Cc-8X7"/>
+                <constraint firstAttribute="trailing" secondItem="UXs-KO-a1A" secondAttribute="trailing" constant="24" id="clC-tc-8pJ"/>
+                <constraint firstItem="UXs-KO-a1A" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="24" id="f8F-sE-n24"/>
+                <constraint firstItem="OG3-In-AKW" firstAttribute="top" secondItem="Erf-7z-MHt" secondAttribute="bottom" constant="8" id="prM-LE-teZ"/>
+                <constraint firstItem="AmJ-9e-H9U" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="rcS-5h-9Wr"/>
+                <constraint firstItem="Erf-7z-MHt" firstAttribute="top" secondItem="UXs-KO-a1A" secondAttribute="bottom" constant="24" id="u8H-bG-jPT"/>
+                <constraint firstItem="KIL-2X-7LQ" firstAttribute="width" secondItem="OG3-In-AKW" secondAttribute="width" id="v7j-Ep-sck"/>
+                <constraint firstAttribute="trailing" secondItem="AmJ-9e-H9U" secondAttribute="trailing" id="whs-iN-iin"/>
+                <constraint firstAttribute="trailing" secondItem="5Xl-an-zWx" secondAttribute="trailing" constant="24" id="xJl-X1-OYT"/>
+            </constraints>
+        </view>
+    </objects>
+</document>

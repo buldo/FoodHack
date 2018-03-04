@@ -16,11 +16,13 @@ class RecipeStepViewController: UIViewController {
     private let speechService = SpeechService()!
 
     private let steps: [RecipeStepInfo]
+    private let recipe: RecipeInfo
 
-    init(steps: [RecipeStepInfo]) {
-        assert(steps.count > 0)
+    init(recipe: RecipeInfo) {
+        assert(recipe.steps.count > 0)
 
-        self.steps = steps
+        self.steps = recipe.steps
+        self.recipe = recipe
 
         super.init(nibName: "RecipeStepViewController", bundle: nil)
 
@@ -105,12 +107,12 @@ class RecipeStepViewController: UIViewController {
                     self.speechService.startUtterance(text: step.voiceDescription)
                 })
             } else {
+                let recipe = self.recipe
+
                 dismiss(animated: true, completion: {
-                    let alert = UIAlertController(title: "Вуаля!", message: "Как говорится, охапка дров и ваше блюдо готово!", preferredStyle: .alert)
+                    let vc = RatingViewController(recipe: recipe)
 
-                    alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
-
-                    UIApplication.shared.keyWindow?.rootViewController?.present(alert, animated: true, completion: nil)
+                    UIApplication.shared.keyWindow?.rootViewController?.present(vc, animated: true, completion: nil)
                 })
             }
         }

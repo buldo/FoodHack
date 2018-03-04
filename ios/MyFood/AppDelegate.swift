@@ -19,7 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         SFSpeechRecognizer.requestAuthorization { _ in }
 
         let window = UIWindow()
-        window.rootViewController = UIViewController()
+        window.rootViewController = SplashViewController()
 
         self.window = window
 
